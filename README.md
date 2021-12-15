@@ -2,7 +2,9 @@
 
 ### Setup
 
-`yarn ios` or `yarn android`
+1. `yarn install` or `npm install`
+2. `npx pod-install`
+3. `yarn ios` or `yarn android`
 
 ### Static Credentials
 
