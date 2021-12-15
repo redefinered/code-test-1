@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {
   Text,
+  View,
   Modal,
   TextInput,
   Button,
   KeyboardAvoidingView,
   StyleSheet,
-  Platform,
   ActivityIndicator
 } from 'react-native';
 import { AppContext } from '../../contexts/providers/app/app.provider';
@@ -77,10 +77,7 @@ const LoginModal = ({ modalDismiss, ...modalProps }) => {
 
   return (
     <Modal {...modalProps} animationType="slide">
-      <KeyboardAvoidingView
-        style={styles.form}
-        behavior={Platform.OS === 'ios' ? 'padding' : 'position'}
-      >
+      <KeyboardAvoidingView style={styles.form}>
         {renderError()}
         {loading && <ActivityIndicator style={{ marginBottom: 10 }} color="blue" />}
         <TextInput
@@ -100,6 +97,7 @@ const LoginModal = ({ modalDismiss, ...modalProps }) => {
           secureTextEntry
         />
         <Button disabled={loading} title="login" onPress={handleSubmit} />
+        <View style={{ height: 10 }} />
         <Button disabled={loading} onPress={modalDismiss} title="cancel" color="orange" />
       </KeyboardAvoidingView>
     </Modal>
@@ -119,6 +117,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     marginBottom: 10,
     borderRadius: 8
+  },
+  button: {
+    marginBottom: 10
   },
   error: {
     color: 'red',
