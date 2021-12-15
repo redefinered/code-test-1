@@ -1,0 +1,41 @@
+{
+  "assessments": [
+    {
+      "id": "1",
+      "title": "Advanced Health Screening",
+      "points": 1000
+    },
+    {
+      "id": "2",
+      "title": "Covid Vaccination",
+      "points": 1300
+    },
+    {
+      "id": "3",
+      "title": "Skills Assesment",
+      "points": 1500
+    }
+  ],
+  "Challenges": [
+    {
+      "id": "1",
+      "title": "Say no to sugar",
+      "points": 50
+    },
+    {
+      "id": "2",
+      "title": "5km Challenge",
+      "points": 50
+    },
+    {
+      "id": "3",
+      "title": "10 weeks diet plan",
+      "points": 50
+    },
+    {
+      "id": "4",
+      "title": "10 days 10-push-ups",
+      "points": 70
+    }
+  ]
+}

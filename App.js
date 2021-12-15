@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, Image, Button, StyleSheet } from 'react-native';
+import { View, SafeAreaView, Image, Button, StyleSheet, ActivityIndicator } from 'react-native';
 import LoginModal from './src/components/login-modal/login-modal.component';
 import HomeScreen from './src/screens/home/home.screen';
 import { AppContext } from './src/contexts/providers/app/app.provider';
@@ -10,6 +10,7 @@ const logo = require('./src/assets/logo.png');
 const App = () => {
   const { currentUser, setCurrentUser } = React.useContext(AppContext);
   const [showForm, setShowForm] = React.useState(false);
+  const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
     checkAuth();
@@ -30,7 +31,16 @@ const App = () => {
 
     // set user again if exists
     setCurrentUser(JSON.parse(userAuth));
+
+    setLoading(false);
   };
+
+  if (loading)
+    return (
+      <View style={{ flex: 1, justifyContent: 'center' }}>
+        <ActivityIndicator color="blue" />
+      </View>
+    );
 
   if (!currentUser)
     return (

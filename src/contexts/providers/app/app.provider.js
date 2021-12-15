@@ -12,16 +12,11 @@ export const AppContext = React.createContext({
   currentUser: null,
   setCurrentUser: () => {},
   login: () => {},
-  logout: () => {},
-  data: {
-    sectionOne: [],
-    sectionTwo: []
-  }
+  logout: () => {}
 });
 
 const AppProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = React.useState(null);
-  const [data, setData] = React.useState(null);
 
   /// login when current user is set by login form or checkAuth function that checks persisted login state
   React.useEffect(() => {
@@ -40,7 +35,7 @@ const AppProvider = ({ children }) => {
   };
 
   return (
-    <AppContext.Provider value={{ currentUser, setCurrentUser, data, setData, login, logout }}>
+    <AppContext.Provider value={{ currentUser, setCurrentUser, login, logout }}>
       {children}
     </AppContext.Provider>
   );

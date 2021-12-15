@@ -14,12 +14,12 @@ import { AppContext } from '../../contexts/providers/app/app.provider';
 
 const STATIC_USER = {
   id: '1',
-  username: 'Fptsoftware',
+  username: 'fptsoftware',
   name: 'Justine Case'
 };
 
-const STATIC_USERNAME = 'test';
-const STATIC_PASSWORD = 'qwer';
+const STATIC_USERNAME = 'fptsoftware';
+const STATIC_PASSWORD = 'fptsoftware1234';
 
 /// For dummy login
 // and using a promise to emulate an API call that resolves in 2 secods
@@ -88,12 +88,14 @@ const LoginModal = ({ modalDismiss, ...modalProps }) => {
           style={{ borderColor: valid ? 'gray' : 'red', ...styles.input }}
           value={username}
           name="username"
+          placeholder="Username"
           onChangeText={setUsername}
         />
         <TextInput
           style={{ borderColor: valid ? 'gray' : 'red', ...styles.input }}
           value={password}
           name="password"
+          placeholder="Password"
           onChangeText={setPassword}
           secureTextEntry
         />
