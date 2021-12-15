@@ -19,20 +19,22 @@ const STATIC_USER = {
 };
 
 const STATIC_USERNAME = 'test';
-const STATIC_PASSWORD = '1234';
+const STATIC_PASSWORD = 'qwer';
 
+/// For dummy login
+// and using a promise to emulate an API call that resolves in 2 secods
 const authenticate = (u, p) =>
   new Promise((resolve, reject) => {
     if (u === STATIC_USERNAME && p === STATIC_PASSWORD) {
       setTimeout(() => {
         resolve({ user: STATIC_USER });
-      }, 3000);
+      }, 2000);
     } else {
       reject(new Error('invalid username or password'));
     }
   });
 
-const LoginModal = ({ handleCancel, ...modalProps }) => {
+const LoginModal = ({ modalDismiss, ...modalProps }) => {
   const { setCurrentUser } = React.useContext(AppContext);
 
   const [username, setUsername] = React.useState('');
@@ -58,6 +60,7 @@ const LoginModal = ({ handleCancel, ...modalProps }) => {
 
       setCurrentUser(user);
 
+      modalDismiss();
       setValid(true);
     } catch (error) {
       setLoading(false);
@@ -95,7 +98,7 @@ const LoginModal = ({ handleCancel, ...modalProps }) => {
           secureTextEntry
         />
         <Button disabled={loading} title="login" onPress={handleSubmit} />
-        <Button disabled={loading} onPress={handleCancel} title="cancel" color="orange" />
+        <Button disabled={loading} onPress={modalDismiss} title="cancel" color="orange" />
       </KeyboardAvoidingView>
     </Modal>
   );
@@ -122,7 +125,7 @@ const styles = StyleSheet.create({
 });
 
 LoginModal.propTypes = {
-  handleCancel: PropTypes.func.isRequired
+  modalDismiss: PropTypes.func.isRequired
 };
 
 export default LoginModal;

@@ -15,7 +15,7 @@ const App = () => {
     checkAuth();
   }, []);
 
-  const cancelLogin = () => {
+  const dismissForm = () => {
     setShowForm(false);
   };
 
@@ -38,7 +38,7 @@ const App = () => {
         <Image source={logo} />
         <Button onPress={() => handleShowForm()} title="Press here to log in" />
 
-        <LoginModal visible={showForm} handleCancel={cancelLogin} />
+        <LoginModal visible={showForm} modalDismiss={dismissForm} />
       </SafeAreaView>
     );
 
