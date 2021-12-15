@@ -6,5 +6,5 @@
 
 ### Static Credentials
 
-- un: nftsoft
-- pw: nftsoft2021
+- un: fptsoftware
+- pw: fptsoftware1234
