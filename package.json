@@ -7,7 +7,8 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "emulator:android": "emulator -avd Pixel_4_API_29 -dns-server 8.8.8.8"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.15.14",
