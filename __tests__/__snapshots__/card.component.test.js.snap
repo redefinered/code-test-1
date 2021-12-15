@@ -1,0 +1,151 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly if no points property 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "white",
+      "borderRadius": 3,
+      "flexDirection": "row",
+      "height": 150,
+      "marginBottom": 15,
+      "marginHorizontal": 8,
+      "shadowColor": "gray",
+      "shadowOffset": Object {
+        "height": 2,
+        "width": 2,
+      },
+      "shadowOpacity": 0.9,
+      "shadowRadius": 1,
+      "width": 250,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "padding": 10,
+        "width": 90,
+      }
+    }
+  >
+    <Image
+      height={100}
+      resizeMode="contain"
+      source={
+        Object {
+          "testUri": "../../../src/assets/item.png",
+        }
+      }
+      width={100}
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "justifyContent": "space-between",
+        "padding": 10,
+        "width": 160,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "blue",
+          "fontSize": 17,
+          "fontWeight": "bold",
+          "marginBottom": 5,
+        }
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`renders correctly if points property is 99999 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "white",
+      "borderRadius": 3,
+      "flexDirection": "row",
+      "height": 150,
+      "marginBottom": 15,
+      "marginHorizontal": 8,
+      "shadowColor": "gray",
+      "shadowOffset": Object {
+        "height": 2,
+        "width": 2,
+      },
+      "shadowOpacity": 0.9,
+      "shadowRadius": 1,
+      "width": 250,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "padding": 10,
+        "width": 90,
+      }
+    }
+  >
+    <Image
+      height={100}
+      resizeMode="contain"
+      source={
+        Object {
+          "testUri": "../../../src/assets/item.png",
+        }
+      }
+      width={100}
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "justifyContent": "space-between",
+        "padding": 10,
+        "width": 160,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "blue",
+          "fontSize": 17,
+          "fontWeight": "bold",
+          "marginBottom": 5,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "paddingBottom": 15,
+        }
+      }
+    >
+      <Text>
+        Earn up to 
+        <Text
+          style={
+            Object {
+              "color": "green",
+              "fontWeight": "bold",
+            }
+          }
+        >
+          99999
+        </Text>
+         points
+      </Text>
+    </View>
+  </View>
+</View>
+`;
