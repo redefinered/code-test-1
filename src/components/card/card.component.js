@@ -2,12 +2,25 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View, Text, Image, StyleSheet } from 'react-native';
 
-const Card = ({ portrait, title, points }) => {
+const Card = ({ portrait, title, points = 0 }) => {
   const getConditionalStyle = () => {
     if (portrait) return { justifyContent: 'space-between', width: 150, height: 250 };
 
     return { flexDirection: 'row', width: 250, height: 150 };
   };
+
+  const renderPoints = () => {
+    if (!points) return;
+
+    return (
+      <View style={{ paddingBottom: 15 }}>
+        <Text>
+          Earn up to <Text style={styles.points}>{points}</Text> points
+        </Text>
+      </View>
+    );
+  };
+
   return (
     <View style={{ ...getConditionalStyle(), ...styles.root }}>
       <View style={{ width: portrait ? '100%' : 90, ...styles.imageWrap }}>
@@ -20,11 +33,7 @@ const Card = ({ portrait, title, points }) => {
       </View>
       <View style={styles.contentWrap}>
         <Text style={styles.title}>{title}</Text>
-        <View style={{ paddingBottom: 15 }}>
-          <Text>
-            Earn up to <Text style={styles.points}>{points}</Text> points
-          </Text>
-        </View>
+        {renderPoints()}
       </View>
     </View>
   );
