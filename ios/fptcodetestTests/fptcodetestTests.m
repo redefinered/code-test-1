@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface nftcodetestTests : XCTestCase
+@interface fptcodetestTests : XCTestCase
 
 @end
 
-@implementation nftcodetestTests
+@implementation fptcodetestTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL(^)(UIView *view))test
 {
