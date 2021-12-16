@@ -61,7 +61,6 @@ const LoginModal = ({ modalDismiss, ...modalProps }) => {
       setCurrentUser(user);
 
       modalDismiss();
-      setValid(true);
     } catch (error) {
       setLoading(false);
       setError(error.message);
